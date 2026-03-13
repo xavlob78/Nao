@@ -11,12 +11,12 @@ databases:
   - columns
   - description
   - preview
-  username: USR_LLM_X
-  account_id: BQ04028-BK
-  password: RBzXMAsOhiTJo7
-  database: POC_LLM_X
-  schema_name: POC_IA_COMO
-  warehouse: WH_POC_LLM_X
+  username: {{ env('SNOWFLAKE_USERNAME') }}
+  account_id: {{ env('SNOWFLAKE_ACCOUNT_ID') }}
+  password: {{ env('SNOWFLAKE_PASSWORD') }}
+  database: {{ env('SNOWFLAKE_DATABASE') }}
+  schema_name: {{ env('SNOWFLAKE_SCHEMA') }}
+  warehouse: {{ env('SNOWFLAKE_WAREHOUSE') }}
 - type: postgres
   name: postgres-prod
   include: []
@@ -25,11 +25,11 @@ databases:
   - columns
   - description
   - preview
-  host: 192.168.2.17
-  port: 5432
-  database: Agendis4-SDIS77
-  user: admin
-  password: KEhPp7RMhbwR9z*hFfCo
+  host: {{ env('POSTGRES_HOST') }}
+  port: {{ env('POSTGRES_PORT') }}
+  database: {{ env('POSTGRES_DATABASE') }}
+  user: {{ env('POSTGRES_USER') }}
+  password: {{ env('POSTGRES_PASSWORD') }}
   schema_name: Agendis
 - type: fabric
   name: fabric-emc
