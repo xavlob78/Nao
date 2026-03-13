@@ -1,5 +1,4 @@
 # Si la question est relative à la Fidélité, Como, LBA alors utilise la database snowflake-prod
-# Si la question est relative au Temps de travail, Agendis alors utilise la database postgres-prod
 # Si la question est relative aux Produits d'energie, EMP alors utilise la database fabric-emc
 
 
