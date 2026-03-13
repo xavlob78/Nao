@@ -11,25 +11,12 @@ databases:
   - columns
   - description
   - preview
-  username: {{ env('SNOWFLAKE_USERNAME') }}
-  account_id: {{ env('SNOWFLAKE_ACCOUNT_ID') }}
-  password: {{ env('SNOWFLAKE_PASSWORD') }}
-  database: {{ env('SNOWFLAKE_DATABASE') }}
-  schema_name: {{ env('SNOWFLAKE_SCHEMA') }}
-  warehouse: {{ env('SNOWFLAKE_WAREHOUSE') }}
-- type: fabric
-  name: fabric-prod
-  include: []
-  exclude: []
-  accessors:
-  - columns
-  - description
-  - preview
-  host: {{ env('FABRIC_HOST') }}
-  port: 1433
-  database: LH_EMP
-  auth_mode: azure_cli
-  driver: ODBC Driver 18 for SQL Server
+  username: USR_LLM_X
+  account_id: BQ04028-BK
+  password: RBzXMAsOhiTJo7
+  database: POC_LLM_X
+  schema_name: POC_IA_COMO
+  warehouse: WH_POC_LLM_X
 - type: postgres
   name: postgres-prod
   include: []
@@ -44,4 +31,20 @@ databases:
   user: admin
   password: KEhPp7RMhbwR9z*hFfCo
   schema_name: Agendis
+- type: fabric
+  name: fabric-emc
+  include: []
+  exclude: []
+  accessors:
+  - columns
+  - description
+  - preview
+  host: {{ env('FABRIC_HOST') }}
+  port: 1433
+  database: {{ env('FABRIC_DATABASE') }}
+  auth_mode: azure_service_principal
+  client_id: {{ env('FABRIC_CLIENT_ID') }}
+  client_secret: {{ env('FABRIC_CLIENT_SECRET') }}
+  tenant_id: {{ env('FABRIC_TENANT_ID') }}
+  driver: ODBC Driver 18 for SQL Server
 repos: []

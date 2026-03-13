@@ -1,11 +1,11 @@
 # Si la question est relative à la Fidélité, Como, LBA alors utilise la database snowflake-prod
 # Si la question est relative au Temps de travail, Agendis alors utilise la database postgres-prod
-# Si la question est relative aux Produits d'energie, EMP alors utilise la database fabric-prod
+# Si la question est relative aux Produits d'energie, EMP alors utilise la database fabric-emc
 
 
 ## Règles et modèle Fidélité COMO BFS
 
-**Description** : Analyse du programme de fidélité COMO pour l'enseigne BFS. Permet de suivre l'attribution et la consommation des bons par restaurants ainsi que les factures reliées.
+**Description** : Analyse du programme de fidélité COMO pour l'enseigne BFS. Permet de suivre l'attribution et la consommation des bons par restaurants ainsi que les factures reliées. Le programme de fidélisation s'appelle également LBA pour la bonne app.
 
 ### Règles métier et instructions
 
