@@ -1,0 +1,4 @@
+.env
+naoenv/
+.gitignore
+.DS_Store
