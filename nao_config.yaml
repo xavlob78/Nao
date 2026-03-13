@@ -1,0 +1,47 @@
+# Configuration documentation:
+# https://docs.getnao.io/nao-agent/context-builder/configuration#nao_config-yaml
+
+project_name: BKNAO
+databases:
+- type: snowflake
+  name: snowflake-prod
+  include: []
+  exclude: []
+  accessors:
+  - columns
+  - description
+  - preview
+  username: {{ env('SNOWFLAKE_USERNAME') }}
+  account_id: {{ env('SNOWFLAKE_ACCOUNT_ID') }}
+  password: {{ env('SNOWFLAKE_PASSWORD') }}
+  database: {{ env('SNOWFLAKE_DATABASE') }}
+  schema_name: {{ env('SNOWFLAKE_SCHEMA') }}
+  warehouse: {{ env('SNOWFLAKE_WAREHOUSE') }}
+- type: fabric
+  name: fabric-prod
+  include: []
+  exclude: []
+  accessors:
+  - columns
+  - description
+  - preview
+  host: {{ env('FABRIC_HOST') }}
+  port: 1433
+  database: {{ env('FABRIC_DATABASE') }}
+  auth_mode: azure_cli
+  driver: ODBC Driver 18 for SQL Server
+- type: postgres
+  name: postgres-prod
+  include: []
+  exclude: []
+  accessors:
+  - columns
+  - description
+  - preview
+  host: {{ env('POSTGRES_HOST') }}
+  port: {{ env('POSTGRES_PORT') }}
+  database: {{ env('POSTGRES_DATABASE') }}
+  user: {{ env('POSTGRES_USER') }}
+  password: {{ env('POSTGRES_PASSWORD') }}
+  schema_name: {{ env('POSTGRES_SCHEMA') }}
+repos: []

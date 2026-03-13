@@ -1,0 +1,8 @@
+# Environnement de développement
+.env
+
+# Credentials
+credentials/
+
+#Python 
+naoenv/
