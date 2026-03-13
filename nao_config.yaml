@@ -27,7 +27,7 @@ databases:
   - preview
   host: {{ env('FABRIC_HOST') }}
   port: 1433
-  database: {{ env('FABRIC_DATABASE') }}
+  database: LH_EMP
   auth_mode: azure_cli
   driver: ODBC Driver 18 for SQL Server
 - type: postgres
