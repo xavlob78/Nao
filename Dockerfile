@@ -5,18 +5,19 @@ FROM getnao/nao:latest
 RUN apt-get update && apt-get install -y \
     curl \
     gnupg \
-    apt-transport-https \
     unixodbc \
     unixodbc-dev
 
-# ajouter le repo Microsoft
-RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
-    && curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list \
+# Ajouter la clé Microsoft
+RUN curl https://packages.microsoft.com/keys/microsoft.asc \
+    | gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
+
+# Ajouter le repo
+RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/20.04/prod focal main" \
     > /etc/apt/sources.list.d/mssql-release.list
 
-# installer le driver SQL Server
-RUN apt-get update \
-    && ACCEPT_EULA=Y apt-get install -y msodbcsql18
+# Installer le driver
+RUN apt-get update && ACCEPT_EULA=Y apt-get install -y msodbcsql18
 
 COPY . /app/project
 
